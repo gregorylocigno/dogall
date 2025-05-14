@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@nuxt/ui-pro";
+
+@layer base {
+  body {
+    font-family: "Figtree", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@theme {
+  --ui-container: var(--container-7xl);
+  --ui-header-height: theme(spacing.24);
+}
+
+@theme static {
+  --color-brand-50: #ffedad;
+  --color-brand-100: #fff0a3;
+  --color-brand-200: #ffee8e;
+  --color-brand-300: #ffe36f;
+  --color-brand-400: #fccd44;
+  --color-brand-500: #f2b829;
+  --color-brand-600: #c8941e;
+  --color-brand-700: #9e7620;
+  --color-brand-800: #71531c;
+  --color-brand-900: #4f3915;
+  --color-brand-950: #291d08;
+  --color-accent-50: #fcfdfc;
+  --color-accent-100: #e5ede6;
+  --color-accent-200: #cfddd1;
+  --color-accent-300: #b9ccbd;
+  --color-accent-400: #a4bbaa;
+  --color-accent-500: #8fa998;
+  --color-accent-600: #78927f;
+  --color-accent-700: #657769;
+  --color-accent-800: #525d54;
+  --color-accent-900: #3e433e;
+  --color-accent-950: #292a29;
+}
