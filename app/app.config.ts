@@ -24,6 +24,22 @@ export default defineAppConfig({
         },
       },
     },
+    pageSection: {
+      slots: {
+        container: "lg:p-0",
+        title:
+          "text-3xl sm:text-4xl lg:text-4xl text-pretty tracking-tight font-bold text-highlighted",
+      },
+      variants: {
+        orientation: {
+          vertical: {
+            headline: "justify-start",
+            title: "text-left",
+            description: "text-left text-wrap",
+          },
+        },
+      },
+    },
   },
   ui: {
     colors: {

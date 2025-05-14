@@ -7,7 +7,7 @@
     />
     <div class="flex flex-row mt-12">
       <div>
-        <h1 class="text-5xl/16 font-bold text-highlighted">
+        <h1 class="font-bold text-highlighted text-4xl/12 xl:text-5xl/16">
           Construisez une relation fondée sur la
           <span class="text-primary">confiance</span> et le
           <span class="text-primary">respect</span>

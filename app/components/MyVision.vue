@@ -1,19 +1,17 @@
 <template>
   <UContainer id="vision" class="pt-24">
-    <div class="mb-8">
-      <h3 class="mb-2.5 text-lg font-semibold text-primary">Ma vision</h3>
-      <h2
-        class="text-3xl sm:text-4xl/16 text-pretty font-bold text-highlighted"
-      >
-        Le lien au cœur de tout
-      </h2>
-      <p class="text-lg text-pretty text-muted mt-4 max-w-4xl">
-        Nos méthodes sont centrées sur l'écoute et la compréhension mutuelle.
-        Apprenez à décoder les besoins, les signaux et les émotions de votre
-        chien.
-      </p>
-    </div>
-    <div class="flex flex-row gap-24 items-center">
+    <UPageSection title="Le lien au cœur de tout" headline="Ma vision">
+      <template #description>
+        <p class="max-w-4xl">
+          Nos méthodes sont centrées sur l'écoute et la compréhension mutuelle.
+          Apprenez à décoder les besoins, les signaux et les émotions de votre
+          chien.
+        </p>
+      </template>
+    </UPageSection>
+    <div
+      class="pt-24 flex flex-col items-center lg:gap-12 lg:flex-row xl:gap-24"
+    >
       <div class="flex flex-col gap-12">
         <UPageFeature
           class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
