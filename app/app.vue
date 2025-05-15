@@ -21,12 +21,29 @@
         </div>
       </template>
 
+      <template #toggle="{ toggle, open }">
+        <UButton
+          :icon="!open ? 'i-lucide-menu' : 'i-lucide-x'"
+          variant="link"
+          color="neutral"
+          size="2xl"
+          @click="toggle"
+          class="lg:hidden"
+        />
+      </template>
+
       <template #body>
+        <div class="py-8 flex justify-center">
+          <ClientOnly>
+            <Logo />
+          </ClientOnly>
+        </div>
+
         <UNavigationMenu
           :items="items"
           orientation="vertical"
           variant="link"
-          class="-mx-2.5"
+          class="-mx-2.5 [&_a]:text-xl [&_a]:justify-center"
         />
       </template>
     </UHeader>

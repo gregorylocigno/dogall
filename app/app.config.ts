@@ -61,8 +61,18 @@ export default defineAppConfig({
           md: {
             base: "px-5",
           },
+          "2xl": {
+            base: "text-3xl",
+          },
         },
       },
+      compoundVariants: [
+        {
+          size: "2xl",
+          square: true,
+          class: "p-2",
+        },
+      ],
     },
     navigationMenu: {
       compoundVariants: [
