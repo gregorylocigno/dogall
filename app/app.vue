@@ -1,13 +1,13 @@
 <template>
   <UApp>
-    <UHeader mode="drawer">
+    <UHeader>
       <template #title>
         <ClientOnly>
           <Logo />
         </ClientOnly>
       </template>
 
-      <UNavigationMenu :items="items" variant="link" />
+      <UNavigationMenu :items="items" variant="link" class="hidden lg:block" />
 
       <template #right>
         <div class="flex">
@@ -21,29 +21,15 @@
         </div>
       </template>
 
-      <template #toggle="{ toggle, open }">
+      <template #toggle>
         <UButton
-          :icon="!open ? 'i-lucide-menu' : 'i-lucide-x'"
+          :icon="!isModalOpen ? 'i-lucide-menu' : 'i-lucide-x'"
           variant="link"
           color="neutral"
           size="2xl"
-          @click="toggle"
+          @click="toggleModal"
           class="lg:hidden"
-        />
-      </template>
-
-      <template #body>
-        <div class="py-8 flex justify-center">
-          <ClientOnly>
-            <Logo />
-          </ClientOnly>
-        </div>
-
-        <UNavigationMenu
-          :items="items"
-          orientation="vertical"
-          variant="link"
-          class="-mx-2.5 [&_a]:text-xl [&_a]:justify-center"
+          aria-label="Menu"
         />
       </template>
     </UHeader>
@@ -51,6 +37,37 @@
     <UMain>
       <NuxtPage />
     </UMain>
+
+    <!-- Mobile navigation modal -->
+    <UModal
+      v-model:open="isModalOpen"
+      size="sm"
+      :ui="{
+        header: 'flex justify-between items-center border-none p-4',
+        content:
+          'fixed bg-default flex flex-col focus:outline-none border-none shadow-lg',
+        body: 'p-4 pt-0',
+      }"
+      :close="false"
+      aria-label="Menu de navigation"
+    >
+      <template #header>
+        <div class="w-full flex justify-center items-center relative">
+          <ClientOnly>
+            <Logo />
+          </ClientOnly>
+        </div>
+      </template>
+
+      <template #body>
+        <UNavigationMenu
+          :items="items"
+          orientation="vertical"
+          variant="link"
+          class="w-full [&_a]:justify-center text-center"
+        />
+      </template>
+    </UModal>
 
     <UFooter class="h-50 pt-16">
       <template #left>
@@ -73,7 +90,7 @@
               variant="link"
               to="https://chat.nuxt.dev"
               target="_blank"
-              aria-label="Discord"
+              aria-label="Facebook"
               size="xl"
             />
             <UButton
@@ -82,7 +99,7 @@
               variant="link"
               to="https://x.com/nuxt_js"
               target="_blank"
-              aria-label="X"
+              aria-label="Instagram"
               size="xl"
             />
           </div>
@@ -95,9 +112,32 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
 import { useSectionObserver } from "~/composables/useSectionObserver";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
+const isModalOpen = ref(false);
+
+// Gestion de la modal mobile
+const toggleModal = () => {
+  isModalOpen.value = !isModalOpen.value;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
+// Navigation observer pour fermer la modal lors des changements de route
+const unsubscribe = router.afterEach(() => {
+  if (isModalOpen.value) {
+    isModalOpen.value = false;
+  }
+});
+
+// Nettoyage de l'observateur de navigation lors de la destruction du composant
+onUnmounted(() => {
+  unsubscribe();
+});
 
 // Utiliser le composable avec des options personnalisées
 const { activeSection } = useSectionObserver({
