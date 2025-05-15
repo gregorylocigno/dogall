@@ -1,6 +1,10 @@
 <template>
   <NuxtLink to="/">
-    <img class="h-16 w-auto" src="/logo.png" alt="Dogall logo" />
+    <img
+      class="h-12 md:h-14 xl:h-16 w-auto"
+      src="/logo.png"
+      alt="Dogall logo"
+    />
   </NuxtLink>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <UApp>
-    <UHeader>
+    <UHeader mode="drawer">
       <template #title>
         <ClientOnly>
           <Logo />
@@ -11,9 +11,23 @@
 
       <template #right>
         <div class="flex">
-          <UButton label="Connexion" variant="link" color="neutral" />
-          <UButton label="Contact" color="neutral" />
+          <UButton
+            label="Connexion"
+            variant="link"
+            color="neutral"
+            class="hidden lg:block"
+          />
+          <UButton label="Contact" color="neutral" class="hidden lg:block" />
         </div>
+      </template>
+
+      <template #body>
+        <UNavigationMenu
+          :items="items"
+          orientation="vertical"
+          variant="link"
+          class="-mx-2.5"
+        />
       </template>
     </UHeader>
 
@@ -21,7 +35,7 @@
       <NuxtPage />
     </UMain>
 
-    <UFooter class="h-50 pt-24">
+    <UFooter class="h-50 pt-16">
       <template #left>
         <ClientOnly>
           <Logo />
@@ -31,7 +45,7 @@
       <UNavigationMenu :items="items" variant="link" />
 
       <template #right>
-        <div class="flex flex-col gap-2 items-end">
+        <div class="flex flex-col gap-2 items-center lg:items-end">
           <p class="text-sm text-pretty text-muted">
             Suivez-moi sur les réseaux
           </p>

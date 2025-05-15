@@ -6,7 +6,7 @@ export default defineAppConfig({
       },
     },
     pageGrid: {
-      base: "relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16",
+      base: "relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[2fr_1fr] gap-6",
     },
     pricingPlan: {
       slots: {
@@ -16,6 +16,11 @@ export default defineAppConfig({
       },
     },
     pageCTA: {
+      slots: {
+        root: "bg-accent-100",
+        container:
+          "flex flex-col lg:grid px-6 py-12 sm:px-12 sm:py-24 lg:px-16 lg:py-24 gap-8 sm:gap-16",
+      },
       variants: {
         variant: {
           soft: {
@@ -26,7 +31,8 @@ export default defineAppConfig({
     },
     pageSection: {
       slots: {
-        container: "lg:p-0",
+        container:
+          "flex flex-col lg:grid py-0 pt-16 sm:py-0 sm:pt-16 lg:py-0 lg:pt-16 gap-8 sm:gap-16",
         title:
           "text-3xl sm:text-4xl lg:text-4xl text-pretty tracking-tight font-bold text-highlighted",
       },

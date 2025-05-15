@@ -1,13 +1,20 @@
 <template>
-  <UContainer id="home" class="mt-5">
-    <img
-      class="rounded-2xl shadow-lg ring ring-default"
-      src="/hero-banner.jpg"
-      alt="Coach with dogs"
-    />
-    <div class="flex flex-row mt-12">
+  <UContainer id="home" class="xl:mt-5">
+    <picture>
+      <source
+        media="(min-width: 1024px)"
+        srcset="/hero-banner.jpg"
+        type="image/jpeg"
+      />
+      <img
+        class="rounded-2xl shadow-lg ring ring-default"
+        src="/hero-mobile.jpg"
+        alt="Coach with dogs"
+      />
+    </picture>
+    <div class="flex flex-col lg:flex-row mt-6 lg:mt-12 gap-6">
       <div>
-        <h1 class="font-bold text-highlighted text-4xl/12 xl:text-5xl/16">
+        <h1 class="font-bold text-highlighted text-3xl md:text-5xl/16">
           Construisez une relation fondée sur la
           <span class="text-primary">confiance</span> et le
           <span class="text-primary">respect</span>
@@ -21,7 +28,7 @@
             variant="soft"
             icon="i-lucide-stars"
             color="accent"
-            >Juin 2025</UBadge
+            >Actualités</UBadge
           >
           <UButton
             variant="link"
@@ -30,10 +37,10 @@
             trailing-icon="i-lucide-arrow-right"
             class="text-sm font-normal hover:underline cursor-pointer"
           >
-            De nouvelles façons de grandir avec votre chien
+            Nouveautés & événements
           </UButton>
         </div>
-        <p class="text-lg">
+        <p class="text-md md:text-lg">
           — Ensemble, nous ferons de votre relation avec votre chien une
           expérience enrichissante et harmonieuse.
         </p>

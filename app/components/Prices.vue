@@ -1,21 +1,19 @@
 <template>
-  <UContainer id="prices" class="pt-24">
-    <div class="mb-8">
-      <h3 class="mb-2.5 text-lg font-semibold text-primary">Services</h3>
-      <h2
-        class="text-3xl sm:text-4xl/16 text-pretty font-bold text-highlighted"
-      >
-        Un accompagnement pensé pour vous deux
-      </h2>
-      <p class="text-lg text-pretty text-muted mt-4 max-w-4xl">
+  <UPageSection
+    id="prices"
+    title="Un accompagnement pensé pour vous deux"
+    headline="Services"
+  >
+    <template #description>
+      <p class="max-w-4xl">
         Avec une véritable passion pour les chiens, je m'engage à vous offrir un
         accompagnement personnalisé et de qualité. Je suis à votre écoute et
         disponible pour répondre à toutes vos questions et vous guider dans les
         diverses étapes de la vie de votre chien.
       </p>
-    </div>
+    </template>
     <UPricingPlans :plans="plans" />
-  </UContainer>
+  </UPageSection>
 </template>
 
 <script setup lang="ts">
