@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/ui-pro",
+    "@vueuse/nuxt",
   ],
   css: ["~/assets/css/main.css"],
 

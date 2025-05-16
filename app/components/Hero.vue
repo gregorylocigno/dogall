@@ -1,5 +1,5 @@
 <template>
-  <UContainer id="home" class="xl:mt-5">
+  <UContainer id="home" class="xl:pt-5">
     <picture>
       <source
         media="(min-width: 1024px)"

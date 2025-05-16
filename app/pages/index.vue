@@ -1,5 +1,5 @@
 <template>
-  <Hero />
+  <Hero class="scroll-mt-header" />
   <MyVision />
   <Prices />
   <Cta />

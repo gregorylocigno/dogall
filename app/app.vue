@@ -111,38 +111,32 @@
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
-import { useSectionObserver } from "~/composables/useSectionObserver";
+import { useScrollSpy } from "~/composables/useScrollSpy";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
 const isModalOpen = ref(false);
 
+const { activeSection } = useScrollSpy("#home, #vision, #prices");
+
 // Gestion de la modal mobile
 const toggleModal = () => {
   isModalOpen.value = !isModalOpen.value;
 };
 
-const closeModal = () => {
-  isModalOpen.value = false;
-};
+onMounted(() => {
+  // Enregistre l’observer et récupère la fonction de désinscription
+  const removeAfterEach = router.afterEach(() => {
+    if (isModalOpen.value) {
+      isModalOpen.value = false;
+    }
+  });
 
-// Navigation observer pour fermer la modal lors des changements de route
-const unsubscribe = router.afterEach(() => {
-  if (isModalOpen.value) {
-    isModalOpen.value = false;
-  }
-});
-
-// Nettoyage de l'observateur de navigation lors de la destruction du composant
-onUnmounted(() => {
-  unsubscribe();
-});
-
-// Utiliser le composable avec des options personnalisées
-const { activeSection } = useSectionObserver({
-  rootMargin: "-60px 0px 0px 0px", // Ajuster selon la hauteur de votre header
-  activeOffset: 150, // Position depuis le haut pour déterminer la section active
+  // Avant que le composant ne soit détruit, on désinscrit l’observer
+  onBeforeUnmount(() => {
+    removeAfterEach();
+  });
 });
 
 const items = computed<NavigationMenuItem[]>(() => [
