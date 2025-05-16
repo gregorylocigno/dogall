@@ -148,7 +148,7 @@ const { activeSection } = useSectionObserver({
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Home",
-    to: "/",
+    to: { path: "/", hash: "#home" },
     active:
       activeSection.value === "home" ||
       (!activeSection.value && route.path === "/"),
