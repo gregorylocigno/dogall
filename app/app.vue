@@ -118,7 +118,7 @@ const route = useRoute();
 const router = useRouter();
 const isModalOpen = ref(false);
 
-const { activeSection } = useScrollSpy("#home, #vision, #prices");
+const { activeSection } = useScrollSpy("#home, #vision, #prices, #how-iam");
 
 // Gestion de la modal mobile
 const toggleModal = () => {
@@ -158,9 +158,9 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: activeSection.value === "prices",
   },
   {
-    label: "Blog",
-    to: "/blog",
-    active: route.path.startsWith("/blog"),
+    label: "Qui suis-je ?",
+    to: { path: "/", hash: "#how-iam" },
+    active: activeSection.value === "how-iam",
   },
 ]);
 </script>
