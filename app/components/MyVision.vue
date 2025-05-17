@@ -39,7 +39,9 @@ Quand cette reconnaissance est mutuelle, le lien devient plus qu’une relation 
           icon="i-lucide-heart"
         />
       </div>
-      <div class="max-w-[440px] justify-self-end self-center">
+      <div
+        class="max-w-[440px] justify-self-end self-center rounded-2xl shadow-lg ring ring-default"
+      >
         <img
           class="w-full h-auto"
           src="/vision-img.png"

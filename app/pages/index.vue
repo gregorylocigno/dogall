@@ -2,6 +2,7 @@
   <Hero class="scroll-mt-header" />
   <MyVision />
   <Prices />
+  <HowIam />
   <Cta />
 </template>
 
