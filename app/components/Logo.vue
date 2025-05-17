@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/">
+  <NuxtLink to="/#home">
     <img
       class="h-12 md:h-14 xl:h-16 w-auto"
       src="/logo.png"

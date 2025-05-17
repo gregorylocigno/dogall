@@ -50,6 +50,7 @@
             icon="i-lucide-heart"
             variant="outline"
             color="neutral"
+            to="/#vision"
           />
           <UButton
             label="Contactez-moi"
