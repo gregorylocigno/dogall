@@ -17,14 +17,17 @@
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "^3.1.0",
     "@nuxt/ui-pro": "^3.1.0",
+    "@nuxtjs/supabase": "^1.5.1",
     "@vueuse/nuxt": "^13.2.0",
     "eslint": "^9.25.1",
     "nuxt": "^3.16.2",
+    "resend": "^4.5.1",
     "typescript": "^5.8.3",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "nuxt-anchorscroll": "^1.0.5"
+    "nuxt-anchorscroll": "^1.0.5",
+    "supabase": "^2.22.12"
   }
 }

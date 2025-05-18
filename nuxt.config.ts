@@ -33,7 +33,18 @@ export default defineNuxtConfig({
   ui: {
     colorMode: false,
     theme: {
-      colors: ["accent"],
+      colors: [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "error",
+        "info",
+        "accent",
+      ],
     },
+  },
+  supabase: {
+    redirect: false,
   },
 });

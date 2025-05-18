@@ -1,81 +1,85 @@
 <template>
-  <UContainer>
-    <UPageHeader
-      title="Contact"
-      :ui="{
-        root: 'relative border-none border-default py-8',
-        container:
-          'flex flex-col justify-center items-center bg-accent-100 rounded-2xl p-12',
-      }"
-    >
-      <template #header>
-        <UBadge color="primary" size="lg">
-          <UIcon name="i-lucide-mail" />
-          Contactez-moi
-        </UBadge>
-      </template>
-    </UPageHeader>
-    <div class="grid grid-cols-2 grid-rows-[2fr_1fr] gap-4">
-      <UPageCard
-        title="Tailwind CSS"
-        description="Nuxt UI v3 integrates with latest Tailwind CSS v4, bringing significant improvements."
-        icon="i-simple-icons-tailwindcss"
-        orientation="horizontal"
-        class="row-span-2"
-      >
-      </UPageCard>
-      <div
-        class="max-w-[440px] justify-self-center self-center rounded-2xl shadow-lg ring ring-default"
-      >
-        <img
-          src="/contact.jpg"
-          alt="Tailwind CSS"
-          class="w-full h-auto rounded-2xl shadow-lg ring ring-default"
-        />
-      </div>
+  <UContainer class="xl:pt-5 grid grid-cols-2 gap-6">
+    <UPageCard title="Contactez-moi">
       <UForm
         :schema="schema"
         :state="state"
         class="space-y-4"
         @submit="onSubmit"
       >
-        <UFormField label="Email" name="email" required>
-          <UInput v-model="state.email" />
+        <div class="flex flex-row gap-4">
+          <UFormField label="Prénom" name="firstname" class="flex-1">
+            <UInput v-model="state.firstname" class="w-full" />
+          </UFormField>
+
+          <UFormField label="Nom" name="lastname" class="flex-1">
+            <UInput v-model="state.lastname" class="w-full" />
+          </UFormField>
+        </div>
+
+        <UFormField label="Téléphone" name="phone">
+          <UInput v-model="state.phone" class="w-full" />
         </UFormField>
 
-        <UFormField label="Password" name="password">
-          <UInput v-model="state.password" type="password" />
+        <UFormField label="Email" name="email">
+          <UInput v-model="state.email" class="w-full" />
         </UFormField>
 
-        <UButton type="submit"> Submit </UButton>
+        <UFormField label="Message" name="message">
+          <UTextarea v-model="state.message" class="w-full" />
+        </UFormField>
+
+        <UButton
+          type="submit"
+          label="Envoyer"
+          trailing-icon="i-heroicons-paper-airplane"
+        />
       </UForm>
-    </div>
+    </UPageCard>
   </UContainer>
 </template>
-
 <script setup lang="ts">
-import * as z from "zod";
 import type { FormSubmitEvent } from "@nuxt/ui";
+import { contactSchema, type ContactSchema } from "~/shared/schemas/contact";
 
-const schema = z.object({
-  email: z.string().email("Invalid email"),
-  password: z.string().min(8, "Must be at least 8 characters"),
-});
+const schema = contactSchema;
 
-type Schema = z.output<typeof schema>;
-
-const state = reactive<Partial<Schema>>({
+const state = reactive<Partial<ContactSchema>>({
+  firstname: undefined,
+  lastname: undefined,
   email: undefined,
-  password: undefined,
+  message: undefined,
+  phone: undefined,
 });
 
 const toast = useToast();
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({
-    title: "Success",
-    description: "The form has been submitted.",
-    color: "success",
+async function onSubmit(event: FormSubmitEvent<ContactSchema>) {
+  const response = await fetch("/api/contact-form", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(event.data),
   });
-  console.log(event.data);
+
+  const result = await response.json();
+
+  if (response.ok && result.success) {
+    toast.add({
+      title: "Merci !",
+      description: "Votre message a bien été envoyé.",
+      color: "success",
+    });
+    // Reset du formulaire
+    state.firstname = undefined;
+    state.lastname = undefined;
+    state.email = undefined;
+    state.message = undefined;
+    state.phone = undefined;
+  } else {
+    toast.add({
+      title: "Erreur",
+      description: result.error || "Une erreur est survenue.",
+      color: "error",
+    });
+  }
 }
 </script>
