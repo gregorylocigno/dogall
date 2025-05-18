@@ -1,44 +1,54 @@
 // ~/composables/useScrollSpy.ts
-import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
+import { useRoute } from "vue-router";
 
-/**
- * Scroll-spy : observe toutes les sections <section id="…">
- * @param selector par défaut 'section[id]'
- */
 export function useScrollSpy(selector = "section[id]") {
   const activeSection = ref<string | null>(null);
   const stops: (() => void)[] = [];
+  const route = useRoute();
 
-  onMounted(async () => {
-    // 1. Attendre que Nuxt ait rendu le DOM
+  // fonction d'init / cleanup
+  const initObservers = async () => {
+    // 1) cleanup des anciens observers
+    stops.forEach((stop) => stop());
+    stops.length = 0;
+
+    // 2) attendre que le DOM soit à jour
     await nextTick();
 
-    // 2. Récupérer toutes les sections
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(selector)
-    );
-    // 3. Observer chaque section
-    sections.forEach((el) => {
-      const stop = useIntersectionObserver(
+    // 3) (re)créer un observer par section
+    document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+      const { stop } = useIntersectionObserver(
         el,
         ([{ isIntersecting }]) => {
-          if (isIntersecting) {
-            activeSection.value = el.id;
-          }
+          if (isIntersecting) activeSection.value = el.id;
         },
-        {
-          // quand l'élément atteint le centre de la fenêtre
-          rootMargin: "-50% 0px -50% 0px",
-          threshold: 0,
-        }
+        { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
       );
       stops.push(stop);
     });
+  };
+
+  onMounted(() => {
+    if (route.path === "/") initObservers();
   });
 
+  // à chaque navigation
+  watch(
+    () => route.path,
+    (path) => {
+      if (path === "/") {
+        initObservers();
+      } else {
+        // on quitte /
+        stops.forEach((stop) => stop());
+        activeSection.value = null;
+      }
+    }
+  );
+
   onBeforeUnmount(() => {
-    // Déconnecter tous les observers
     stops.forEach((stop) => stop());
   });
 

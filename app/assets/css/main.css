@@ -44,10 +44,3 @@
   --color-accent-900: #3e433e;
   --color-accent-950: #292a29;
 }
-
-@layer utilities {
-  /* utility qui applique l’offset header */
-  .scroll-mt-header {
-    scroll-margin-top: var(--ui-header-height);
-  }
-}

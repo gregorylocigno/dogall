@@ -17,7 +17,12 @@
             color="neutral"
             class="hidden lg:block"
           />
-          <UButton label="Contact" color="neutral" class="hidden lg:block" />
+          <UButton
+            label="Contact"
+            to="/contact"
+            color="neutral"
+            class="hidden lg:block"
+          />
         </div>
       </template>
 
@@ -164,9 +169,3 @@ const items = computed<NavigationMenuItem[]>(() => [
   },
 ]);
 </script>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-</style>
