@@ -24,12 +24,17 @@ export default defineEventHandler(async (event) => {
       from: "alain@dogall.be",
       to: "alain@dogall.be",
       subject: "Nouveau message de contact",
-      html: `<p>${body.firstname} ${body.lastname} (${body.email}) a écrit :<br>${body.message}</p>`,
+      html: `<p>
+        <strong>Nom:</strong> ${body.firstname} ${body.lastname}<br>
+        <strong>Email:</strong> ${body.email}<br>
+        <strong>Téléphone:</strong> ${body.phone}<br>
+        <strong>Message:</strong><br>${body.message}
+      </p>`,
     });
 
     return { success: true };
   } catch (e) {
     setResponseStatus(event, 500);
-    return { error: "Erreur lors de l’envoi de l’email" };
+    return { error: "Erreur lors de l'envoi de l'email" };
   }
 });
