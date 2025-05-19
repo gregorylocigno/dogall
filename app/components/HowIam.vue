@@ -21,7 +21,7 @@
     >
       <template #title
         ><div class="lg:pl-4">
-          Je m’appelle Alain Humblet, passionné du monde canin depuis toujours.
+          Je m’appelle Alain Humblet, passionné du monde canin.
         </div></template
       >
       <template #description>

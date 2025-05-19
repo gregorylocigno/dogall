@@ -6,7 +6,7 @@
   >
     <template #description>
       <p class="max-w-4xl">
-        Nos méthodes sont centrées sur l'écoute et la compréhension mutuelle.
+        Mes méthodes sont centrées sur l'écoute et la compréhension mutuelle.
         Apprenez à décoder les besoins, les signaux et les émotions de votre
         chien.
       </p>

@@ -91,7 +91,7 @@ const plans = ref([
     price: "90 € *",
     modal: {
       description:
-        "Découvrez notre Bilan Comportemental complet, conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Lors de cette séance de 1h30, nous nous endons à votre domicile ou dans un lieu de votre choix pour observer et analyser les interactions de votre chien dans son environnement quotidien.",
+        "Découvrez notre Bilan Comportemental complet, conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Lors de cette séance de 1h30, je me rends à votre domicile ou dans un lieu de votre choix pour observer et analyser les interactions de votre chien dans son environnement quotidien.",
       features: [
         {
           title: "Évaluation complète",
@@ -159,7 +159,7 @@ const plans = ref([
     price: "60 € *",
     modal: {
       description:
-        "Optez pour notre Coaching Simple, une séance d'éducation facturée à un taux horaire de 60 euros. Cette formule est conçue pour suivre le bilan comportemental et approfondir les techniques d'éducation tout en répondant à toutes vos questions. Elle est parfaite pour les propriétaires de chiens qui souhaitent des conseils pratiques et des solutions rapides.",
+        "Le coaching simple est une séance d'éducation facturée à un taux horaire de 60 euros. Cette formule est conçue pour suivre le bilan comportemental et approfondir les techniques d'éducation tout en répondant à toutes vos questions. Elle est parfaite pour les propriétaires de chiens qui souhaitent des conseils pratiques et des solutions rapides.",
       features: [
         {
           title: "Séance d'éducation",
@@ -171,7 +171,7 @@ const plans = ref([
         {
           title: "Réponses à vos questions",
           description:
-            "Profitez de l'expertise de notre coach pour obtenir des réponses claires et précises à toutes vos questions sur l'éducation de votre chien.",
+            "Profitez de mon expertise pour obtenir des réponses claires et précises à toutes vos questions sur l'éducation de votre chien.",
           icon: "i-lucide-message-circle",
         },
         {
@@ -256,7 +256,7 @@ const plans = ref([
         {
           title: "Prix sur demande",
           description:
-            " Pour obtenir un devis personnalisé, contactez-nous et nous évaluerons ensemble les besoins spécifiques de votre chien afin de vous proposer la meilleure solution.",
+            " Pour obtenir un devis personnalisé, contactez-moi et nous évaluerons ensemble les besoins spécifiques de votre chien afin de vous proposer la meilleure solution.",
           icon: "i-lucide-euro",
         },
       ],

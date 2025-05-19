@@ -2,7 +2,7 @@
   <UContainer class="pt-16">
     <UPageCTA
       title="Rejoignez-nous dans cette aventure"
-      description="Offrez à votre chien (et à vous-même) le cadeau d'un lien puissant et transformateur. Avec notre accompagnement, vous pourrez vivre une expérience unique, bâtie sur l'écoute, la compréhension et l'amour."
+      description="Offrez à votre chien (et à vous-même) le cadeau d'un lien puissant et transformateur. Avec notre accompagnement, vous pourrez vivre une expérience unique, bâtie sur l'écoute, la compréhension et le plaisir."
       variant="soft"
       :links="links"
     />
