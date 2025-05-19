@@ -28,7 +28,6 @@
         <template #button>
           <UModal
             :title="plan.title"
-            :description="plan.modal.description"
             :ui="{
               content:
                 'fixed bg-default divide-none divide-default flex flex-col focus:outline-none',
@@ -44,6 +43,7 @@
             </UButton>
             <template #body>
               <div class="flex flex-col gap-10">
+                <p class="text-sm text-muted">{{ plan.modal.description }}</p>
                 <div class="flex flex-col gap-4">
                   <UPageFeature
                     v-for="(feat, idx) in plan.modal.features"
@@ -67,6 +67,9 @@
             <template #footer>
               <UButton
                 label="Contactez-moi"
+                to="/contact"
+                :variant="plan.button.variant"
+                :color="plan.button.color"
                 trailing-icon="i-lucide-arrow-right"
                 class="w-full justify-center"
               />
@@ -85,7 +88,7 @@ const plans = ref([
     title: "Bilan Comportemental",
     description:
       "Le bilan est conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Permet d'établir une base solide pour une éducation efficace et positive. La séance se déroule chez vous ou dans le lieu de votre choix.",
-    price: "90 € ",
+    price: "90 € *",
     modal: {
       description:
         "Découvrez notre Bilan Comportemental complet, conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Lors de cette séance de 1h30, nous nous endons à votre domicile ou dans un lieu de votre choix pour observer et analyser les interactions de votre chien dans son environnement quotidien.",
@@ -113,6 +116,12 @@ const plans = ref([
           description:
             "Un suivi continu pendant toute la durée de l'entraînement, avec des conseils adaptés à l'évolution de votre chien.",
           icon: "i-lucide-dog",
+        },
+        {
+          title: "Frais de déplacement",
+          description:
+            "Pour les déplacements au-delà de 20 km, un supplément de 0,42 € par kilomètre sera appliqué.",
+          icon: "i-lucide-info",
         },
       ],
       footer:
@@ -147,24 +156,45 @@ const plans = ref([
     title: "Séance de Coaching Simple",
     description:
       "Cette formule est conçue pour suivre le bilan comportemental et appronfondir les techniques d'éducation. Elle est parfaite pour les propriétaires qui souhaitent des conseils pratiques et des solutions rapides.",
-    price: "60 €",
+    price: "60 € *",
     modal: {
       description:
         "Optez pour notre Coaching Simple, une séance d'éducation facturée à un taux horaire de 60 euros. Cette formule est conçue pour suivre le bilan comportemental et approfondir les techniques d'éducation tout en répondant à toutes vos questions. Elle est parfaite pour les propriétaires de chiens qui souhaitent des conseils pratiques et des solutions rapides.",
       features: [
         {
           title: "Séance d'éducation",
+          description:
+            "Une heure dédiée à l'apprentissage de nouvelles techniques d'éducation et à la résolution de problèmes comportementaux spécifiques.",
+
+          icon: "i-lucide-clock",
         },
         {
           title: "Réponses à vos questions",
+          description:
+            "Profitez de l'expertise de notre coach pour obtenir des réponses claires et précises à toutes vos questions sur l'éducation de votre chien.",
+          icon: "i-lucide-message-circle",
         },
         {
           title: "Plans d'entraînement",
+          description:
+            "À la fin de chaque séance, vous recevrez des plans d'entraînement personnalisés pour continuer le travail à domicile.",
+          icon: "i-lucide-calendar-days",
         },
         {
           title: "Flexibilité",
+          description:
+            " Idéal pour des sessions régulières qui s'adaptent à votre emploi du temps et aux besoins de votre chien.",
+          icon: "i-lucide-arrow-left-right",
+        },
+        {
+          title: "Frais de déplacement",
+          description:
+            "Pour les déplacements au-delà de 20 km, un supplément de 0,42 € par kilomètre sera appliqué.",
+          icon: "i-lucide-info",
         },
       ],
+      footer:
+        "Le Coaching Simple est parfait pour les propriétaires de chiens qui cherchent à améliorer rapidement le comportement de leur animal avec des conseils pratiques et efficaces. C'est une solution flexible et accessible pour une éducation positive.",
     },
     features: [
       {
@@ -201,17 +231,37 @@ const plans = ref([
       features: [
         {
           title: "Évaluation personnalisée",
+          description:
+            "Une analyse approfondie des besoins spécifiques de votre chien, qu'il s'agisse de problèmes comportementaux complexes ou de suivi pour chiots et chiens adultes.",
+          icon: "i-lucide-notebook-pen",
         },
         {
           title: "Séances sur mesure",
+          description:
+            "Des séances d'éducation adaptées à vos objectifs et aux besoins de votre chien, avec des techniques avancées et des outils spécifiques.",
+          icon: "i-lucide-clock",
         },
         {
           title: "Plans d'entraînement personnalisés",
+          description:
+            "Des plans d'entraînement détaillés et adaptés à l'évolution de votre chien, pour un suivi continu et efficace.",
+          icon: "i-lucide-calendar-days",
         },
         {
           title: "Suivi intensif",
+          description:
+            "Un suivi régulier et personnalisé pour garantir des résultats optimaux et un bien-être accru pour votre chien.",
+          icon: "i-lucide-chart-spline",
+        },
+        {
+          title: "Prix sur demande",
+          description:
+            " Pour obtenir un devis personnalisé, contactez-nous et nous évaluerons ensemble les besoins spécifiques de votre chien afin de vous proposer la meilleure solution.",
+          icon: "i-lucide-euro",
         },
       ],
+      footer:
+        " La Formule Pack est parfaite pour les propriétaires de chiens qui recherchent une solution complète et personnalisée. Que ce soit pour des problèmes comportementaux spécifiques ou pour un suivi intensif, cette formule vous offre la flexibilité et l'expertise nécessaires pour répondre à tous vos besoins.",
     },
     features: [
       {

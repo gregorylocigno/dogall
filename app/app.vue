@@ -15,7 +15,7 @@
             label="Connexion"
             variant="link"
             color="neutral"
-            class="hidden lg:block"
+            class="hidden"
           />
           <UButton
             label="Contact"
@@ -93,7 +93,8 @@
               icon="i-simple-icons-facebook"
               color="neutral"
               variant="link"
-              to="https://chat.nuxt.dev"
+              to="https://www.facebook.com/share/12J7PTuXnPF/"
+              rel="noopener"
               target="_blank"
               aria-label="Facebook"
               size="xl"
@@ -102,8 +103,9 @@
               icon="i-simple-icons-instagram"
               color="neutral"
               variant="link"
-              to="https://x.com/nuxt_js"
+              to="https://www.instagram.com/dog_all_coaching_canin/"
               target="_blank"
+              rel="noopener"
               aria-label="Instagram"
               size="xl"
             />
@@ -166,6 +168,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     label: "Qui suis-je ?",
     to: { path: "/", hash: "#how-iam" },
     active: activeSection.value === "how-iam",
+  },
+  {
+    label: "Contact",
+    to: { path: "/contact" },
+    active: route.path === "/contact",
   },
 ]);
 </script>

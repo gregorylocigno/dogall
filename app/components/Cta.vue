@@ -15,6 +15,7 @@ const links = ref([
     label: "Contactez-moi",
     color: "neutral",
     trailingIcon: "i-lucide-arrow-right",
+    to: "/contact",
   },
 ]);
 </script>

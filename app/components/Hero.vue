@@ -36,6 +36,9 @@
             color="neutral"
             trailing-icon="i-lucide-arrow-right"
             class="text-sm font-normal hover:underline cursor-pointer"
+            to="https://www.facebook.com/share/12J7PTuXnPF/"
+            target="_blank"
+            rel="noopener"
           >
             Nouveautés & événements
           </UButton>
@@ -56,6 +59,7 @@
             label="Contactez-moi"
             trailing-icon="i-lucide-arrow-right"
             color="neutral"
+            to="/contact"
           />
         </div>
       </div>
