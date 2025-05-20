@@ -120,6 +120,7 @@
 import type { NavigationMenuItem } from "@nuxt/ui";
 import { useScrollSpy } from "~/composables/useScrollSpy";
 import { useRoute, useRouter } from "vue-router";
+import { Analytics } from "@vercel/analytics/nuxt";
 
 const route = useRoute();
 const router = useRouter();
