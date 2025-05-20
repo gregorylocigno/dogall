@@ -113,6 +113,7 @@
         </div>
       </template>
     </UFooter>
+    <Analytics />
   </UApp>
 </template>
 
