@@ -9,6 +9,8 @@ export default defineContentConfig({
         date: z.string(),
         featured: z.boolean().optional(),
         image: z.string().optional(),
+        description: z.string(),
+        authors: z.any().optional(),
       }),
     }),
   },

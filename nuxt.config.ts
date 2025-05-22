@@ -13,8 +13,16 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/ui-pro",
+    "@nuxtjs/i18n",
     "@vueuse/nuxt",
   ],
+  i18n: {
+    locales: [
+      { code: "fr", iso: "fr-FR", name: "Français" },
+      { code: "en", iso: "en-US", name: "English" },
+    ],
+    defaultLocale: "fr",
+  },
   css: ["~/assets/css/main.css"],
 
   fonts: {
