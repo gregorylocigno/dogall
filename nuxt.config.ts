@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/content",
+    "@nuxtjs/mdc",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/icon",

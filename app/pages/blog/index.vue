@@ -8,8 +8,7 @@
       <template #description>
         <p class="text-[15px]">
           Explorez nos articles pour mieux comprendre votre chien, éviter les
-          erreurs d’éducation courantes et adopter une approche respectueuse et
-          durable.
+          erreurs d’éducation courantes et adopter une approche respectueuse.
         </p>
       </template>
     </UPageHeader>

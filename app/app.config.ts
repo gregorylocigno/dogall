@@ -1,5 +1,31 @@
 export default defineAppConfig({
   uiPro: {
+    prose: {
+      h1: {
+        base: "text-4xl font-bold text-gray-900 mb-6 mt-8",
+      },
+      h2: {
+        base: "text-3xl font-semibold text-gray-800 mb-4 mt-8",
+      },
+      h3: {
+        base: "text-2xl font-semibold text-gray-800 mb-3 mt-6",
+      },
+      p: {
+        base: "text-lg text-gray-700 mb-4 leading-relaxed",
+      },
+      ul: {
+        base: "list-disc list-inside mb-4 space-y-2",
+      },
+      li: {
+        base: "text-lg text-gray-700 ml-4",
+      },
+      strong: {
+        base: "font-semibold text-gray-900",
+      },
+      blockquote: {
+        base: "border-l-4 border-primary-500 pl-4 italic text-gray-600 my-6",
+      },
+    },
     header: {
       slots: {
         root: "bg-default/75 border-none backdrop-blur h-(--ui-header-height) sticky top-0 z-50",

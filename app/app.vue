@@ -81,7 +81,12 @@
         </ClientOnly>
       </template>
 
-      <UNavigationMenu :items="items" variant="link" />
+      <UNavigationMenu
+        :items="items"
+        variant="link"
+        orientation="horizontal"
+        class="hidden lg:block"
+      />
 
       <template #right>
         <div class="flex flex-col gap-2 items-center lg:items-end">
@@ -127,7 +132,9 @@ const route = useRoute();
 const router = useRouter();
 const isModalOpen = ref(false);
 
-const { activeSection } = useScrollSpy("#home, #vision, #prices, #how-iam");
+const { activeSection } = useScrollSpy(
+  "#home, #vision, #prices, #how-iam, #blog"
+);
 
 // Gestion de la modal mobile
 const toggleModal = () => {

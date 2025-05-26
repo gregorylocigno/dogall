@@ -1,8 +1,8 @@
 ---
-title: "Les méthodes coercitives en éducation canine : pourquoi elles fonctionnent mais pourquoi vous ne devriez jamais les utiliser"
+title: "Les méthodes coercitives en éducation canine : un contrôle illusoire."
 description: "Efficaces en apparence, les méthodes coercitives brisent la confiance du chien et masquent les vrais problèmes. Voici pourquoi vous ne devriez jamais les utiliser."
 date: 22/05/2025
-image: https://vmefgwbvmpcveuipsqab.supabase.co/storage/v1/object/public/blog//article-01-cover.jpg
+image: /article-01-cover.jpg
 featured: true
 ---
 
@@ -49,6 +49,8 @@ Quand cette explosion arrive, elle peut être bien plus intense que le problème
 Les méthodes coercitives ne résolvent pas le problème, elles le cachent – et quand il réapparaît, il est pire.
 
 ## Les effets des méthodes coercitives sur la pyramide de Maslow
+
+![Pyramide de Maslow](/article-01-img01.jpg)
 
 Les méthodes coercitives brisent le lien social du chien, ce qui a un impact durable sur sa capacité à interagir correctement avec son entourage.
 

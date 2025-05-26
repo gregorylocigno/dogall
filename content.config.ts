@@ -6,6 +6,7 @@ export default defineContentConfig({
       type: "page",
       source: "blog/*.md",
       schema: z.object({
+        title: z.string(),
         date: z.string(),
         featured: z.boolean().optional(),
         image: z.string().optional(),
