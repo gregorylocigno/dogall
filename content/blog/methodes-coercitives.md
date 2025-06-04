@@ -3,7 +3,7 @@ title: "Les méthodes coercitives en éducation canine : un contrôle illusoire
 description: "Efficaces en apparence, les méthodes coercitives brisent la confiance du chien et masquent les vrais problèmes. Voici pourquoi vous ne devriez jamais les utiliser."
 date: 26/05/2025
 image: /article-01-cover.jpg
-featured: true
+featured: false
 ---
 
 ## Introduction : Obéissance ou bien-être
