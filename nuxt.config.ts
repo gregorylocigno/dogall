@@ -56,4 +56,17 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+
+  app: {
+    head: {
+      title: "Dog All - Coaching Canin",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Comportementaliste canin en Province de Liège & Luxembourg – Bilan comportemental, dressage et séances d’éducation canine avec méthodes positives et bienveillantes. Cours collectif et individuel personnalisé pour chiens.",
+        },
+      ],
+    },
+  },
 });
