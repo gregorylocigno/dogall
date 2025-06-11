@@ -3,7 +3,7 @@ title: "Pourquoi bien nourrir et mastiquer ? Clés d’un chien équilibré !"
 description: "Votre chien engloutit sa gamelle en quelques secondes ? Il détruit vos affaires, vole de la nourriture ou semble toujours en quête d’occupation ? Son alimentation et sa mastication sont les clés d’un bien-être souvent négligé."
 date: 05/06/2025
 image: /article-02-cover.jpg
-featured: true
+featured: false
 ---
 
 ## Un problème que beaucoup sous-estiment
