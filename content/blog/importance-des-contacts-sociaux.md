@@ -3,7 +3,7 @@ title: "L'importance des contacts sociaux chez le chien - Comprendre et favorise
 description: "Le chien est un animal social par essence. Contrairement à ce que l’on pourrait croire, il ne se suffit pas de son maître pour être équilibré. Les interactions avec les humains et avec ses congénères sont essentielles pour son développement, son bien-être émotionnel et sa capacité à s’adapter à son environnement."
 date: 12/06/2025
 image: /article-03-cover.jpg
-featured: true
+featured: false
 ---
 
 ## Une nature sociale, un besoin fondamental
