@@ -1,4 +1,5 @@
 <template>
+  <Axeptio />
   <Hero />
   <MyVision />
   <Prices />
