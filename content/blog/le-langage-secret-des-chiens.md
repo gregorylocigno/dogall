@@ -3,7 +3,7 @@ title: "Le langage secret des chiens : comprendre leurs signaux d’apaisement"
 description: "Nos chiens communiquent en silence, à travers des gestes, des postures et des mimiques subtiles qui leur permettent de désamorcer les tensions, de transmettre leurs émotions, et de maintenir une harmonie sociale avec leurs congénères et les humains."
 date: 19/06/2025
 image: /article-04-cover.jpg
-featured: true
+featured: false
 ---
 
 ##
