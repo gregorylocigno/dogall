@@ -41,7 +41,6 @@
 
     <UMain>
       <NuxtPage />
-      <Axeptio />
     </UMain>
 
     <!-- Mobile navigation modal -->
