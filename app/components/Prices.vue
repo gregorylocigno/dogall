@@ -88,7 +88,7 @@ const plans = ref([
     title: "Bilan Comportemental",
     description:
       "Le bilan est conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Permet d'établir une base solide pour une éducation efficace et positive. La séance se déroule chez vous ou dans le lieu de votre choix.",
-    price: "90 € *",
+    price: "90 €",
     modal: {
       description:
         "Découvrez notre Bilan Comportemental complet, conçu pour évaluer en profondeur le comportement de votre chien ou chiot. Lors de cette séance de 1h30, je me rends à votre domicile ou dans un lieu de votre choix pour observer et analyser les interactions de votre chien dans son environnement quotidien.",
@@ -118,10 +118,10 @@ const plans = ref([
           icon: "i-lucide-dog",
         },
         {
-          title: "Frais de déplacement",
+          title: "Où se déroulent les séances ?",
           description:
-            "Pour les déplacements au-delà de 20 km, un supplément de 0,42 € par kilomètre sera appliqué.",
-          icon: "i-lucide-info",
+            "Dans toute la province du Luxembourg, ainsi qu'en province de Liège",
+          icon: "i-lucide-map-pin",
         },
       ],
       footer:
@@ -156,7 +156,7 @@ const plans = ref([
     title: "Séance de Coaching Simple",
     description:
       "Cette formule est conçue pour suivre le bilan comportemental et appronfondir les techniques d'éducation. Elle est parfaite pour les propriétaires qui souhaitent des conseils pratiques et des solutions rapides.",
-    price: "60 € *",
+    price: "60 €",
     modal: {
       description:
         "Le coaching simple est une séance d'éducation facturée à un taux horaire de 60 euros. Cette formule est conçue pour suivre le bilan comportemental et approfondir les techniques d'éducation tout en répondant à toutes vos questions. Elle est parfaite pour les propriétaires de chiens qui souhaitent des conseils pratiques et des solutions rapides.",
@@ -187,10 +187,10 @@ const plans = ref([
           icon: "i-lucide-arrow-left-right",
         },
         {
-          title: "Frais de déplacement",
+          title: "Où se déroulent les séances ?",
           description:
-            "Pour les déplacements au-delà de 20 km, un supplément de 0,42 € par kilomètre sera appliqué.",
-          icon: "i-lucide-info",
+            "Dans toute la province du Luxembourg, ainsi qu'en province de Liège",
+          icon: "i-lucide-map-pin",
         },
       ],
       footer:
