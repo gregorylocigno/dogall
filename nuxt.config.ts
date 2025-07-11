@@ -6,22 +6,9 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: [
-    "@nuxt/content",
-    "@nuxtjs/mdc",
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    "@nuxt/image",
-    "@nuxt/ui-pro",
-    "@nuxtjs/i18n",
-    "@vueuse/nuxt",
-  ],
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/seo", "@nuxt/content", "@nuxtjs/mdc", "@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/ui-pro", "@nuxtjs/i18n", "@vueuse/nuxt", "@nuxtjs/robots"],
   i18n: {
-    locales: [
-      { code: "fr", iso: "fr-FR", name: "Français" },
-      { code: "en", iso: "en-US", name: "English" },
-    ],
+    locales: [{ code: "fr", iso: "fr-FR", name: "Français" }],
     defaultLocale: "fr",
   },
   css: ["~/assets/css/main.css"],
