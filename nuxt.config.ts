@@ -6,7 +6,20 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: ["@nuxtjs/sitemap", "@nuxtjs/seo", "@nuxt/content", "@nuxtjs/mdc", "@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/ui-pro", "@nuxtjs/i18n", "@vueuse/nuxt", "@nuxtjs/robots"],
+  modules: [
+    "@nuxtjs/sitemap",
+    "@nuxtjs/seo",
+    "@nuxt/content",
+    "@nuxtjs/mdc",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/ui-pro",
+    "@nuxtjs/i18n",
+    "@vueuse/nuxt",
+    "@nuxtjs/robots",
+  ],
   i18n: {
     locales: [{ code: "fr", iso: "fr-FR", name: "Français" }],
     defaultLocale: "fr",
@@ -44,8 +57,36 @@ export default defineNuxtConfig({
     redirect: false,
   },
 
+  __dangerouslyDisableSanitizersByTagID: {
+    "axeptio-settings": ["innerHTML"],
+  },
   app: {
     head: {
+      script: [
+        {
+          innerHTML: `
+            window.axeptioSettings = {
+              clientId: "686f9f81651ade3dc3dfda31",
+              cookiesVersion: "dogall-fr-EU",
+              googleConsentMode: {
+                default: {
+                  analytics_storage: "denied",
+                  ad_storage: "denied",
+                  ad_user_data: "denied",
+                  ad_personalization: "denied",
+                  wait_for_update: 500
+                }
+              }
+            };
+          `,
+          type: "text/javascript",
+          id: "axeptio-settings",
+        },
+        {
+          src: "https://static.axept.io/sdk.js",
+          async: true,
+        },
+      ],
       title: "Dog All - Coaching Canin",
       meta: [
         {

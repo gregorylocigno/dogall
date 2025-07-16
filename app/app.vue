@@ -128,6 +128,28 @@ import { useScrollSpy } from "~/composables/useScrollSpy";
 import { useRoute, useRouter } from "vue-router";
 import { Analytics } from "@vercel/analytics/nuxt";
 
+// Déclaration globale pour éviter l'erreur TS sur window.axeptioSDK
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+declare global {
+  interface Window {
+    axeptioSDK?: any;
+    axeptioSettings?: {
+      clientId: string;
+      cookiesVersion: string;
+      googleConsentMode: {
+        default: {
+          analytics_storage: string;
+          ad_storage: string;
+          ad_user_data: string;
+          ad_personalization: string;
+          wait_for_update: number;
+        };
+      };
+    };
+  }
+}
+
 const route = useRoute();
 const router = useRouter();
 const isModalOpen = ref(false);
